@@ -1,0 +1,41 @@
+﻿@model Blog.Domain.Entities.Article
+
+@{
+    ViewBag.Title = "MoreInfo";
+}
+
+<h2>MoreInfo</h2>
+
+<div>
+    <h4>Article</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateArticle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateArticle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextOfArticle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextOfArticle)
+        </dd>      
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

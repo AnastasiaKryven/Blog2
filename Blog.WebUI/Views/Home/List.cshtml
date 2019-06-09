@@ -1,0 +1,31 @@
+﻿
+@using Blog.WebUI.Models
+@using Blog.WebUI.Helpers
+@model ArticleViewModel
+
+
+@{
+    /**/
+
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@foreach (var p in Model.Articles)
+{
+
+    <div class="sticker-right sticker-right align-text-top" data-sticker="@p.DateArticle">
+        <i style="font-size:x-large">@p.Name</i><br />@p.TextOfArticle
+    </div>
+    @Html.ActionLink("Edit", "EditArticle", "Home", new { ID = p.ArticleId }, new { @class = "navbar-brand" })
+}
+
+    <div>
+        @Html.ActionLink("Добавить", "CreateArticle");
+    </div>
+
+<div>
+    @Html.PageLinks(Model.PadingInfo, x => Url.Action("List", new { page = x }))
+</div>
+
